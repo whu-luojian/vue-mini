@@ -1,4 +1,6 @@
-function Compile(node, vm) {
+import Watcher from './watcher'
+
+export function compile(node, vm) {
   return _nodeToFragment(node, vm)
 }
 

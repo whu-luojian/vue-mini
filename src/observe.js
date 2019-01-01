@@ -1,3 +1,5 @@
+import Dep from './dep'
+
 function defineReactive(vm, key, value) {
   let dep = new Dep()
   /**
@@ -25,7 +27,7 @@ function defineReactive(vm, key, value) {
   })
 }
 
-function observe(data, vm) {
+ export function observe(data, vm) {
   Object.keys(data).forEach(key => {
     defineReactive(vm, key, data[key])
   })

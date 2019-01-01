@@ -1,4 +1,6 @@
-class Watcher {
+import Dep from './dep'
+
+export default class Watcher {
   constructor(vm, node, name, type) {
     Dep.target = this
     this.vm = vm

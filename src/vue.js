@@ -1,3 +1,6 @@
+import { observe } from './observe'
+import { compile } from './compile'
+
 class Vue {
   constructor(options) {
     this.data = options.data
@@ -6,9 +9,11 @@ class Vue {
     observe(data, this)
     // 编译阶段解析节点中的指令和占位符，创建watcher，读取data里的属性，触发get,收集对应的依赖（即订阅者watcher）
     let id = options.el
-    let dom = new Compile(document.getElementById(id), this)
+    let dom = compile(document.getElementById(id), this)
     // patch
     document.getElementById(id).appendChild(dom)
     // 更新阶段则触发set，发布更新，watchers一一执行更新
   }
 }
+
+window.Vue = Vue
