@@ -36,7 +36,7 @@ function _compileElement(node, vm) {
     }
   }
 
-  // 节点类型为text
+  // 节点类型为text，寻找占位符
   if(node.nodeType === 3) {
     if (reg.test(node.nodeValue)) {
       let name = RegExp.$1.trim()
