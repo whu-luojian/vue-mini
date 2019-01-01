@@ -9,15 +9,10 @@
   <script src="./src/observe.js"></script>
   <script src="./src/watcher.js"></script>
   <script src="./src/compile.js"></script>
-  <script src="./src/mvvm.js"></script>
+  <script src="./src/vue.js"></script>
 </head>
 <body>
-  <div id="app">
-    <input type="text" id="a" v-model="text">
-    <p>
-      {{text}}
-    </p>
-  </div>
+  <div id="app"><input type="text" id="a" v-model="text">{{text}}</div>
   <script>
     let vm = new Vue({
       el: 'app',
